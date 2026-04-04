@@ -30,14 +30,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
-  -font-smoothing: antialiased;
+  font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
 body {
   font: 16px/1.6 'Raleway', Arial, Helvetica, sans-serif;
   color: #fff;
   text-align:center;
-  /* background: #DCAF3D !important; */
+  background: #DCAF3D !important;
 }
 img {
   border: 0;
@@ -129,29 +129,26 @@ figure {
   opacity: 1 !important;
 }
 
-#myVideo {
+video {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%; 
   min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -2; /* Keeps it behind content but in front of the body color */
-  object-fit: cover;
-  display: block !important; /* Forces it to show */
 }
-
-/* Adjust the overlay so it is transparent */
 #video:after {
   content: '';
-  background: rgba(0, 0, 0, 0.4); /* Use RGBA for transparency instead of a solid gradient */
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
+  opacity: 0.75;
+  background: #323232; /* Old browsers */
+  background: -moz-linear-gradient(top, #323232 0%, #656565 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #323232 0%,#656565 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #323232 0%,#656565 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#323232', endColorstr='#656565',GradientType=0 ); /* IE6-9 */
+  position:fixed;
+  left:0;
+  top:0;
+  right:0;
   bottom: 0;
-  z-index: -1;
 }
 .wrapper-background-dark:after {
   background: #222;
@@ -856,126 +853,4 @@ textarea.form-control {
   height: 6px;
   background-color: #fff;
   border-radius: 3px;
-}
-.fp-enabled body, html.fp-enabled {
-    background: transparent !important;
-}
-@media only screen and (max-width: 767px) {
-    #myVideo {
-        /* Change the image source for mobile if needed */
-        content: url('../images/bgimg.jpeg'); 
-        
-        /* Ensure the image covers the screen without stretching */
-        object-fit: cover;
-        width: 100% !important;
-        height: 100% !important;
-        position: fixed;
-    }
-
-    /* If the overlay is making it look "broken" or too dark on mobile */
-    #video:after {
-        background: rgba(0, 0, 0, 0.5); /* Adjust transparency for mobile */
-    }
-}
-@media only screen and (max-width: 767px) {
-    /* 1. Force the background of all containers to be transparent */
-    html, body, .fp-section, .fp-tableCell, #fullpage, .wrapper {
-        background-color: transparent !important;
-    }
-
-    /* 2. Ensure the image is positioned correctly and visible */
-    #myVideo {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: fixed !important;
-        z-index: -2 !important;
-        object-fit: cover;
-        width: 100vw !important;
-        height: 100vh !important;
-        top: 0;
-        left: 0;
-    }
-
-    /* 3. Adjust the overlay so it doesn't turn into a solid black block */
-    #video:after {
-        content: '';
-        background: rgba(0, 0, 0, 0.4) !important; /* Semi-transparent black */
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-    }
-}
-
-
-
-
-
-
-/* Force the logo container to be a single row */
-#logo {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important; /* Centers logos vertically */
-    justify-content: flex-start !important; /* Keeps them to the left */
-    text-decoration: none;
-}
-
-/* Space between the main logo and the secondary bin logo */
-.logo-secondary {
-    margin-left: 15px !important;
-    display: block !important;
-}
-
-/* --- Desktop Logic --- */
-.logo-web {
-    display: block !important;
-}
-.logo-mobile {
-    display: none !important;
-}
-
-/* --- Mobile Logic --- */
-@media only screen and (max-width: 767px) {
-    #logo {
-        justify-content: left !important; /* Centers the whole group on mobile */
-        width: 100%;
-    }
-    
-    .logo-web {
-        display: none !important;
-    }
-    
-    .logo-mobile {
-        display: block !important;
-        width: 130px !important; /* Adjust size for mobile */
-        height: auto !important;
-    }
-
-    .logo-secondary {
-        width: 40px !important; /* Slightly smaller secondary logo for mobile */
-        height: auto !important;
-        margin-left: 10px !important;
-    }
-}
-/* Clients Carousel Styling */
-.client-list .item {
-    background: rgba(255, 255, 255, 0.1); /* Subtle background for the logo box */
-    padding: 20px;
-    margin: 10px;
-    border-radius: 8px;
-    height: 120px; /* Fixed height for the container */
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-}
-
-.client-list .item img {
-    max-width: 100% !important;
-    max-height: 80px !important; /* Forces logos to stay within a specific height */
-    width: auto !important; /* Allows width to scale naturally */
-    object-fit: contain; /* Prevents stretching */
 }
