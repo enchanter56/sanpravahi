@@ -131,6 +131,30 @@
                 }
             });
         }
+        if ($('.client-list').length) {
+            $('.client-list').owlCarousel({
+                loop: true,
+                nav: false,
+                dots: true,
+                items: 4,
+                margin: 30,
+                autoplay: true,
+                smartSpeed: 700,
+                autoplayTimeout: 3000, // 3 seconds per scroll
+                responsive: {
+                    0: {
+                        items: 2,
+                        margin: 15
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            });
+        }
         if ($('.testimonials-slider').length) {
             $('.testimonials-slider').owlCarousel({
                 loop: true,
