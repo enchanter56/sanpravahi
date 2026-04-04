@@ -267,6 +267,14 @@ html.fp-enabled {
     white-space: nowrap;
     border: 0
 }
-
+@media only screen and (max-width: 767px) {
+    html.fp-enabled, 
+    .fp-enabled body, 
+    #fullpage, 
+    .fp-section, 
+    .fp-tableCell {
+        background-color: transparent !important; /* Removes the solid black/yellow layers */
+    }
+}
 
 /*# sourceMappingURL=fullpage.min.css.map */
