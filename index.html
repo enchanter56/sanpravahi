@@ -2,7 +2,15 @@
 <html lang="en">
 
   <head>
-
+    <style>
+        #ajax-contact {
+            position: relative;
+            z-index: 999;
+        }
+        #ajax-contact button, #ajax-contact input {
+            pointer-events: all !important;
+        }
+    </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -514,7 +522,7 @@ https://templatemo.com/tm-528-Sanpravahi
                                             <div class="input-field">
                                                 <textarea class="form-control" name="message" id="message" required placeholder="Please provide your requirements"></textarea>
                                             </div>
-                                            <button class="btn" type="submit">Submit</button>
+                                            <button type="submit" id="form-submit" class="btn">Submit Now</button>
                                         </form>
                                         <div id="form-messages" class="mt-3"></div>
                                     </div>
