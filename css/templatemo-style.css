@@ -30,7 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -ms-font-smoothing: antialiased;
-  font-smoothing: antialiased;
+  -font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
 }
 body {
@@ -853,4 +853,25 @@ textarea.form-control {
   height: 6px;
   background-color: #fff;
   border-radius: 3px;
+}
+
+
+
+/* Clients Carousel Styling */
+.client-list .item {
+    background: rgba(255, 255, 255, 0.1); /* Subtle background for the logo box */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 8px;
+    height: 120px; /* Fixed height for the container */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.client-list .item img {
+    max-width: 100% !important;
+    max-height: 80px !important; /* Forces logos to stay within a specific height */
+    width: auto !important; /* Allows width to scale naturally */
+    object-fit: contain; /* Prevents stretching */
 }
