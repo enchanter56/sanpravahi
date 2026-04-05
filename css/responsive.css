@@ -429,3 +429,23 @@
 		left: 43%;
 	}
 }
+/* Mobile Styles (Max-width 767px) */
+@media only screen and (max-width: 767px) {
+    /* Hide the desktop version */
+    #logo .desktop-logo {
+        display: none !important;
+    }
+
+    /* Show the mobile version */
+    #logo .mobile-logo {
+        display: inline-block !important;
+        max-width: 150px; /* Adjust size as needed for mobile */
+        height: auto;
+    }
+    
+    /* Adjust the additional icon if needed */
+    #logo .logo-icon {
+        width: 40px;
+        height: auto;
+    }
+}
