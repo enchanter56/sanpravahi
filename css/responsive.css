@@ -9,9 +9,9 @@
 		font-size: 100px;
 		margin-bottom:20px;
 	}
-	.next-section {
+	/* .next-section { */
 	/*	bottom: auto; */
-	}
+	/* } */
 	.welcome-title:before {
 		margin: 20px auto 5px;
 	}
