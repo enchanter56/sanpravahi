@@ -449,3 +449,18 @@
         height: auto;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    body {
+        /* Replace with the path to your mobile-specific image */
+        background-image: url('../images/mobile-background.jpeg') !important; 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    /* If you kept the #myImage div from the previous step, use this instead: */
+    #myImage {
+        background-image: url('../images/mobile-background.jpeg') !important;
+    }
+}
